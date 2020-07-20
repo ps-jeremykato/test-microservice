@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Test.Controllers
@@ -11,6 +12,7 @@ namespace Test.Controllers
         }
 
         [HttpGet("/api/Test")]
+        [Authorize]
         public IActionResult Test()
         {
             return Ok(new { success = true });
